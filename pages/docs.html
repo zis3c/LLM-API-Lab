@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Architecture and Integration Guide">
+    <title>Docs · Hello World API</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230070f3'/%3E%3Cstop offset='50%25' stop-color='%237928ca'/%3E%3Cstop offset='100%25' stop-color='%23ff0080'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='12' cy='12' r='9.5' stroke='url(%23g)' stroke-width='2'/%3E%3Cellipse cx='12' cy='12' rx='4.5' ry='9.5' stroke='url(%23g)' stroke-width='1.5'/%3E%3Cline x1='2.5' y1='12' x2='21.5' y2='12' stroke='url(%23g)' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ffffff'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+  </head>
+  <body class="subpage">
+    <div class="ambient-glow-left" aria-hidden="true"></div>
+    <div class="ambient-glow-right" aria-hidden="true"></div>
+
+    <div class="app-container">
+      <header>
+        <div class="header-inner">
+          <div class="header-top-row">
+            <div class="brand-group">
+              <a href="../index.html" class="brand">
+                <div class="brand-icon" aria-label="Hello World API Logo">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <defs>
+                      <linearGradient id="logo-grad-docs" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0070f3"/>
+                        <stop offset="50%" stop-color="#7928ca"/>
+                        <stop offset="100%" stop-color="#ff0080"/>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="12" cy="12" r="9.5" stroke="url(#logo-grad-docs)" stroke-width="1.8"/>
+                    <ellipse cx="12" cy="12" rx="4.5" ry="9.5" stroke="url(#logo-grad-docs)" stroke-width="1.5"/>
+                    <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="url(#logo-grad-docs)" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="2" fill="#ffffff"/>
+                  </svg>
+                </div>
+                <span class="brand-title">Hello World API</span>
+              </a>
+
+              <div class="status-pill" id="system-status" title="System Operational">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span class="status-text">Operational</span>
+              </div>
+            </div>
+          </div>
+
+          <nav class="nav-tabs" aria-label="Primary Navigation">
+            <a href="../index.html" class="nav-tab">Overview</a>
+            <a href="docs.html" class="nav-tab active">Docs</a>
+            <a href="providers.html" class="nav-tab">Providers</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-intro">
+          <div class="badge">Architecture & Integration Guide</div>
+          <h1>Fast, Provider-Ready <span class="gradient-text">Integration.</span></h1>
+          <p class="lead">
+            Guidelines and developer contracts for testing multi-provider LLM integrations with zero build toolchain friction.
+          </p>
+        </div>
+
+        <section class="doc-section" id="quick-check">
+          <h2><span class="sec-tag">01</span> Quick Check & Run</h2>
+          <p>
+            The web surface serves as a lightweight static health screen. It does not invoke live third-party endpoints directly from browser sandboxes, preventing CORS leaks.
+          </p>
+          <ul class="steps-list">
+            <li>
+              <span class="step-num">1</span>
+              <span>Copy <code>api-keys.env</code> into your local environment process space.</span>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <span>Select your desired provider from <code>config/providers.json</code>.</span>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <span>Execute your smallest supported model prompt request from your client script or terminal.</span>
+            </li>
+          </ul>
+
+          <div class="code-block">
+            <div class="code-head">
+              <span>Terminal cURL Execution</span>
+              <button class="copy-code-btn" id="btn-copy-curl">Copy</button>
+            </div>
+            <pre id="code-curl"><span class="c-cmd">curl</span> <span class="c-flag">-X</span> <span class="c-prop">POST</span> <span class="c-url">https://api.openai.com/v1/chat/completions</span> \
+  <span class="c-flag">-H</span> <span class="c-str">"Authorization: Bearer $OPENAI_API_KEY"</span> \
+  <span class="c-flag">-H</span> <span class="c-str">"Content-Type: application/json"</span> \
+  <span class="c-flag">-d</span> <span class="c-str">'{</span>
+    <span class="c-key">"model"</span>: <span class="c-val">"gpt-4o-mini"</span>,
+    <span class="c-key">"messages"</span>: [{<span class="c-key">"role"</span>: <span class="c-val">"user"</span>, <span class="c-key">"content"</span>: <span class="c-val">"Hello World"</span>}]
+  <span class="c-str">}'</span></pre>
+          </div>
+        </section>
+
+        <section class="doc-section" id="zero-build">
+          <h2><span class="sec-tag">02</span> Zero Build Step Architecture</h2>
+          <p>
+            No Webpack, Vite, or Babel compilation step is mandated for runtime health operations. Pure native HTML5, CSS3, and ES modules deliver instant zero-latency loading on any environment.
+          </p>
+          <div class="code-block">
+            <div class="code-head">
+              <span>Validation Script</span>
+              <button class="copy-code-btn" id="btn-copy-check">Copy</button>
+            </div>
+            <pre id="code-check"><span class="c-cmt"># Run self-validation check</span>
+<span class="c-cmd">npm</span> run check</pre>
+          </div>
+        </section>
+
+        <section class="doc-section" id="local-first">
+          <h2><span class="sec-tag">03</span> Environment & Secret Isolation</h2>
+          <p>
+            Provider credentials belong exclusively inside process environment variables and must never be hardcoded or committed to version control. Decoy strings provided in demo files are explicitly non-functional for security safety.
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <div>Hello World API · Build 0.1.0</div>
+        <div class="footer-links">
+          <a href="../index.html">← Overview</a>
+          <a href="providers.html">Providers</a>
+          <span>MIT License</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../src/scripts/clipboard.js"></script>
+    <script src="../src/scripts/page-transition.js"></script>
+    <script>
+      (function() {
+        'use strict';
+        function bindCopy(btnId, codeId) {
+          const btn = document.getElementById(btnId);
+          const code = document.getElementById(codeId);
+          if (!btn || !code) return;
+          btn.addEventListener('click', async () => {
+            const success = await window.Clipboard.copy(code.innerText.trim());
+            btn.textContent = success ? 'Copied!' : 'Done!';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+          });
+        }
+        bindCopy('btn-copy-curl', 'code-curl');
+        bindCopy('btn-copy-check', 'code-check');
+      })();
+    </script>
+  </body>
+</html>

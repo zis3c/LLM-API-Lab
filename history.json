@@ -1,0 +1,30 @@
+{
+  "generated": "sample",
+  "service": "hello-world-api",
+  "events": [
+    {
+      "id": "rel-001",
+      "type": "release",
+      "version": "0.1.0",
+      "status": "published",
+      "timestamp": "2026-09-11T08:00:00Z",
+      "summary": "Initial provider registry and static health screen"
+    },
+    {
+      "id": "cfg-002",
+      "type": "configuration",
+      "version": "0.1.0",
+      "status": "verified",
+      "timestamp": "2026-09-11T08:15:00Z",
+      "summary": "Provider endpoint configuration validated"
+    },
+    {
+      "id": "ci-003",
+      "type": "check",
+      "version": "0.1.0",
+      "status": "passed",
+      "timestamp": "2026-09-11T08:20:00Z",
+      "summary": "JavaScript syntax and configuration checks passed"
+    }
+  ]
+}

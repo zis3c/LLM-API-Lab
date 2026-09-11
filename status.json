@@ -1,0 +1,7 @@
+{
+  "status": "operational",
+  "service": "hello-world-api",
+  "version": "0.1.0",
+  "environment": "development",
+  "lastChecked": "local"
+}

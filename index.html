@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Minimal LLM integration health check and developer testing suite">
+    <title>Hello World API</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230070f3'/%3E%3Cstop offset='50%25' stop-color='%237928ca'/%3E%3Cstop offset='100%25' stop-color='%23ff0080'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='12' cy='12' r='9.5' stroke='url(%23g)' stroke-width='2'/%3E%3Cellipse cx='12' cy='12' rx='4.5' ry='9.5' stroke='url(%23g)' stroke-width='1.5'/%3E%3Cline x1='2.5' y1='12' x2='21.5' y2='12' stroke='url(%23g)' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ffffff'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body class="index-page">
+    <div class="ambient-glow-left" aria-hidden="true"></div>
+    <div class="ambient-glow-right" aria-hidden="true"></div>
+
+    <div class="app-container">
+      <header>
+        <div class="header-inner">
+          <div class="header-top-row">
+            <div class="brand-group">
+              <a href="index.html" class="brand">
+                <div class="brand-icon" aria-label="Hello World API Logo">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <defs>
+                      <linearGradient id="logo-grad-home" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0070f3"/>
+                        <stop offset="50%" stop-color="#7928ca"/>
+                        <stop offset="100%" stop-color="#ff0080"/>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="12" cy="12" r="9.5" stroke="url(#logo-grad-home)" stroke-width="1.8"/>
+                    <ellipse cx="12" cy="12" rx="4.5" ry="9.5" stroke="url(#logo-grad-home)" stroke-width="1.5"/>
+                    <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="url(#logo-grad-home)" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="2" fill="#ffffff"/>
+                  </svg>
+                </div>
+                <span class="brand-title">Hello World API</span>
+              </a>
+
+              <div class="status-pill" id="system-status" title="System Operational">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span class="status-text">Operational</span>
+              </div>
+            </div>
+          </div>
+
+          <nav class="nav-tabs" aria-label="Primary Navigation">
+            <a href="index.html" class="nav-tab active">Overview</a>
+            <a href="pages/docs.html" class="nav-tab">Docs</a>
+            <a href="pages/providers.html" class="nav-tab">Providers</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="kicker-badge">
+              <span class="gradient-bar" aria-hidden="true"></span>
+              Developer Integration Suite
+            </div>
+
+            <h1>
+              Ship your next prompt <span class="gradient-text">faster.</span>
+            </h1>
+
+            <p class="lead">
+              A lightweight, provider-ready testing ground for LLM integrations. Eliminates boilerplate setup with instant zero-build configuration.
+            </p>
+
+            <div class="actions">
+              <a class="btn btn-primary" href="pages/docs.html" id="action-docs">
+                <span>Read the docs</span>
+                <span class="btn-arrow">→</span>
+              </a>
+              <a class="btn btn-secondary" href="pages/providers.html" id="action-providers">
+                <span>View providers</span>
+              </a>
+            </div>
+
+            <div class="specs-grid" aria-label="Architecture highlights">
+              <div class="spec-card active-card" data-tab-target="pane-curl" id="card-curl" role="button" tabindex="0" aria-label="Switch to cURL execution snippet">
+                <div class="spec-index">01 / BUILD</div>
+                <h3>No Build Step <span class="card-arrow">→</span></h3>
+                <p>Pure native web stack. Zero compiler latency.</p>
+              </div>
+
+              <div class="spec-card" data-tab-target="pane-config" id="card-config" role="button" tabindex="0" aria-label="Switch to providers.json configuration snippet">
+                <div class="spec-index">02 / ROUTE</div>
+                <h3>Multi-Provider <span class="card-arrow">→</span></h3>
+                <p>OpenAI, Anthropic, Google & Mistral pre-wired.</p>
+              </div>
+
+              <div class="spec-card" data-tab-target="pane-env" id="card-env" role="button" tabindex="0" aria-label="Switch to environment secrets snippet">
+                <div class="spec-index">03 / ISOLATION</div>
+                <h3>Local First <span class="card-arrow">→</span></h3>
+                <p>Local configuration keeps provider setup easy to inspect.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="terminal-deck" aria-label="Interactive configuration terminal">
+              <div class="terminal-header">
+                <div class="window-dots" aria-hidden="true">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+
+                <div class="terminal-tabs" role="tablist">
+                  <button class="tab-btn active" role="tab" aria-selected="true" data-target="pane-curl" id="tab-curl">cURL</button>
+                  <button class="tab-btn" role="tab" aria-selected="false" data-target="pane-config" id="tab-config">providers.json</button>
+                  <button class="tab-btn" role="tab" aria-selected="false" data-target="pane-env" id="tab-env">api-keys.env</button>
+                </div>
+
+                <button class="copy-btn" id="btn-copy" aria-label="Copy snippet code">
+                  <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="copy-label">Copy</span>
+                </button>
+              </div>
+
+              <div class="code-viewport">
+                <div class="code-pane active" id="pane-curl" role="tabpanel">
+                  <pre><span class="c-cmt"># Instant execution without build toolchain</span>
+<span class="c-cmd">curl</span> <span class="c-flag">-X</span> <span class="c-prop">POST</span> <span class="c-url">https://api.openai.com/v1/chat/completions</span> \
+  <span class="c-flag">-H</span> <span class="c-str">"Authorization: Bearer $OPENAI_API_KEY"</span> \
+  <span class="c-flag">-H</span> <span class="c-str">"Content-Type: application/json"</span> \
+  <span class="c-flag">-d</span> <span class="c-str">'{
+    <span class="c-key">"model"</span>: <span class="c-val">"gpt-4o-mini"</span>,
+    <span class="c-key">"messages"</span>: [{<span class="c-key">"role"</span>: <span class="c-val">"user"</span>, <span class="c-key">"content"</span>: <span class="c-val">"Hello World"</span>}]
+  }'</span></pre>
+                </div>
+
+                <div class="code-pane" id="pane-config" role="tabpanel">
+                  <pre><span class="c-cmt">// config/providers.json routing registry</span>
+{
+  <span class="c-key">"default"</span>: <span class="c-str">"openai"</span>,
+  <span class="c-key">"providers"</span>: {
+    <span class="c-key">"openai"</span>: { <span class="c-prop">"env"</span>: <span class="c-val">"OPENAI_API_KEY"</span>, <span class="c-prop">"baseUrl"</span>: <span class="c-str">"https://api.openai.com/v1"</span> },
+    <span class="c-key">"anthropic"</span>: { <span class="c-prop">"env"</span>: <span class="c-val">"ANTHROPIC_API_KEY"</span>, <span class="c-prop">"baseUrl"</span>: <span class="c-str">"https://api.anthropic.com"</span> },
+    <span class="c-key">"google"</span>: { <span class="c-prop">"env"</span>: <span class="c-val">"GOOGLE_AI_API_KEY"</span>, <span class="c-prop">"baseUrl"</span>: <span class="c-str">"https://generativelanguage.googleapis.com"</span> }
+  }
+}</pre>
+                </div>
+
+                <div class="code-pane" id="pane-env" role="tabpanel">
+                  <pre><span class="c-cmt"># Local environment configuration</span>
+<span class="c-key">APP_ENV</span>=<span class="c-val">development</span>
+<span class="c-key">API_VERSION</span>=<span class="c-val">v1</span>
+<span class="c-key">DEFAULT_PROVIDER</span>=<span class="c-str">openai</span>
+<span class="c-key">DEFAULT_MODEL</span>=<span class="c-val">gpt-4o-mini</span>
+<span class="c-key">LOG_LEVEL</span>=<span class="c-val">info</span>
+
+<span class="c-cmt"># Keep production credentials outside source control</span></pre>
+                </div>
+              </div>
+
+              <div class="terminal-footer-bar">
+                <div class="status-pill-subtle">
+                  <span class="status-dot-subtle"></span>
+                  <span>ready-to-serve</span>
+                </div>
+                <span>utf-8 · lf</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div>Build 0.1.0 · Development runtime · Local configuration</div>
+        <div class="footer-links">
+          <a href="pages/docs.html">Documentation</a>
+          <a href="pages/providers.html">Providers</a>
+          <span>MIT License</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="src/scripts/clipboard.js"></script>
+    <script src="src/scripts/page-transition.js"></script>
+    <script src="src/scripts/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "hello-world-api",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "check": "node -e \"JSON.parse(require('fs').readFileSync('config/providers.json','utf8')); if (!require('fs').existsSync('index.html')) process.exit(1); console.log('configuration ok')\"",
+    "test": "node --check src/scripts/clipboard.js && node --check src/scripts/home.js && node --check src/scripts/page-transition.js",
+    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/css/main.css --minify",
+    "watch:css": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/css/main.css --watch",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.6",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19"
+  }
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Provider Endpoints and Configuration for Hello World API">
+    <title>Providers · Hello World API</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230070f3'/%3E%3Cstop offset='50%25' stop-color='%237928ca'/%3E%3Cstop offset='100%25' stop-color='%23ff0080'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='12' cy='12' r='9.5' stroke='url(%23g)' stroke-width='2'/%3E%3Cellipse cx='12' cy='12' rx='4.5' ry='9.5' stroke='url(%23g)' stroke-width='1.5'/%3E%3Cline x1='2.5' y1='12' x2='21.5' y2='12' stroke='url(%23g)' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ffffff'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+  </head>
+  <body class="subpage">
+    <div class="ambient-glow-left" aria-hidden="true"></div>
+    <div class="ambient-glow-right" aria-hidden="true"></div>
+
+    <div class="app-container">
+      <header>
+        <div class="header-inner">
+          <div class="header-top-row">
+            <div class="brand-group">
+              <a href="../index.html" class="brand">
+                <div class="brand-icon" aria-label="Hello World API Logo">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <defs>
+                      <linearGradient id="logo-grad-prov" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0070f3"/>
+                        <stop offset="50%" stop-color="#7928ca"/>
+                        <stop offset="100%" stop-color="#ff0080"/>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="12" cy="12" r="9.5" stroke="url(#logo-grad-prov)" stroke-width="1.8"/>
+                    <ellipse cx="12" cy="12" rx="4.5" ry="9.5" stroke="url(#logo-grad-prov)" stroke-width="1.5"/>
+                    <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="url(#logo-grad-prov)" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="2" fill="#ffffff"/>
+                  </svg>
+                </div>
+                <span class="brand-title">Hello World API</span>
+              </a>
+
+              <div class="status-pill" id="system-status" title="System Operational">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span class="status-text">Operational</span>
+              </div>
+            </div>
+          </div>
+
+          <nav class="nav-tabs" aria-label="Primary Navigation">
+            <a href="../index.html" class="nav-tab">Overview</a>
+            <a href="docs.html" class="nav-tab">Docs</a>
+            <a href="providers.html" class="nav-tab active">Providers</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-intro">
+          <div class="badge">Model Providers & Routing</div>
+          <h1>Multi-Provider <span class="gradient-text">Directory.</span></h1>
+          <p class="lead">
+            Pre-configured REST endpoints and required environment keys for standard LLM providers.
+          </p>
+        </div>
+
+        <div class="providers-grid">
+          <div class="provider-card">
+            <div class="provider-header">
+              <div class="provider-name">OpenAI</div>
+              <div class="provider-status">Default</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Environment Key</div>
+              <div class="meta-val">OPENAI_API_KEY</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Base URL</div>
+              <div class="meta-val">https://api.openai.com/v1</div>
+            </div>
+          </div>
+
+          <div class="provider-card">
+            <div class="provider-header">
+              <div class="provider-name">Anthropic</div>
+              <div class="provider-status">Ready</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Environment Key</div>
+              <div class="meta-val">ANTHROPIC_API_KEY</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Base URL</div>
+              <div class="meta-val">https://api.anthropic.com</div>
+            </div>
+          </div>
+
+          <div class="provider-card">
+            <div class="provider-header">
+              <div class="provider-name">Google AI</div>
+              <div class="provider-status">Ready</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Environment Key</div>
+              <div class="meta-val">GOOGLE_AI_API_KEY</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Base URL</div>
+              <div class="meta-val">https://generativelanguage.googleapis.com</div>
+            </div>
+          </div>
+
+          <div class="provider-card">
+            <div class="provider-header">
+              <div class="provider-name">OpenRouter</div>
+              <div class="provider-status">Ready</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Environment Key</div>
+              <div class="meta-val">OPENROUTER_API_KEY</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Base URL</div>
+              <div class="meta-val">https://openrouter.ai/api/v1</div>
+            </div>
+          </div>
+
+          <div class="provider-card">
+            <div class="provider-header">
+              <div class="provider-name">Mistral AI</div>
+              <div class="provider-status">Ready</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Environment Key</div>
+              <div class="meta-val">MISTRAL_API_KEY</div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-label">Base URL</div>
+              <div class="meta-val">https://api.mistral.ai/v1</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="json-deck">
+          <div class="deck-head">
+            <span>config/providers.json</span>
+            <button class="copy-btn" id="btn-copy-json">Copy JSON</button>
+          </div>
+          <pre id="json-content">{
+  <span class="c-key">"default"</span>: <span class="c-str">"openai"</span>,
+  <span class="c-key">"providers"</span>: {
+    <span class="c-key">"openai"</span>: { <span class="c-key">"env"</span>: <span class="c-val">"OPENAI_API_KEY"</span>, <span class="c-key">"baseUrl"</span>: <span class="c-str">"https://api.openai.com/v1"</span> },
+    <span class="c-key">"anthropic"</span>: { <span class="c-key">"env"</span>: <span class="c-val">"ANTHROPIC_API_KEY"</span>, <span class="c-key">"baseUrl"</span>: <span class="c-str">"https://api.anthropic.com"</span> },
+    <span class="c-key">"google"</span>: { <span class="c-key">"env"</span>: <span class="c-val">"GOOGLE_AI_API_KEY"</span>, <span class="c-key">"baseUrl"</span>: <span class="c-str">"https://generativelanguage.googleapis.com"</span> },
+    <span class="c-key">"openrouter"</span>: { <span class="c-key">"env"</span>: <span class="c-val">"OPENROUTER_API_KEY"</span>, <span class="c-key">"baseUrl"</span>: <span class="c-str">"https://openrouter.ai/api/v1"</span> },
+    <span class="c-key">"mistral"</span>: { <span class="c-key">"env"</span>: <span class="c-val">"MISTRAL_API_KEY"</span>, <span class="c-key">"baseUrl"</span>: <span class="c-str">"https://api.mistral.ai/v1"</span> }
+  }
+}</pre>
+        </div>
+      </main>
+
+      <footer>
+        <div>Hello World API · Build 0.1.0</div>
+        <div class="footer-links">
+          <a href="../index.html">← Overview</a>
+          <a href="docs.html">Documentation</a>
+          <span>MIT License</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../src/scripts/clipboard.js"></script>
+    <script src="../src/scripts/page-transition.js"></script>
+    <script>
+      (function() {
+        'use strict';
+        const btn = document.getElementById('btn-copy-json');
+        const code = document.getElementById('json-content');
+        if (!btn || !code) return;
+        btn.addEventListener('click', async () => {
+          const success = await window.Clipboard.copy(code.innerText.trim());
+          btn.textContent = success ? 'Copied!' : 'Done!';
+          setTimeout(() => { btn.textContent = 'Copy JSON'; }, 1600);
+        });
+      })();
+    </script>
+  </body>
+</html>
